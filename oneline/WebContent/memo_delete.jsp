@@ -9,37 +9,26 @@
 </head>
 <body>
 <%
+	request.setCharacterEncoding("UTF-8");
+	String memo = request.getParameter("memo");
+	
 	String url = "jdbc:mysql://localhost/world?characterEncoding=UTF-8&serverTimezone=UTC";
 	String user = "root";
 	String passwd = "woehddb5555!";
 	Connection con = null;
-	String sql = "select * from oneline";
+	String sql = "delete from oneline(memo) where no = ?";
 	PreparedStatement pstmt = null;
-	PreparedStatement pstmt2 = null;
 	
-	try {
-		Class.forName("com.mysql.cj.jdbc.Driver");
-	} catch (ClassNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	
-	Class.forName("com.mysql.cj.jdbc.Driver"); //jsp문에서는 필요
+	Class.forName("com.mysql.cj.jdbc.Driver");
 	con = DriverManager.getConnection(url, user, passwd);
-	
+
 	pstmt = con.prepareStatement(sql);
-	ResultSet rs = pstmt.executeQuery(); //select
-	while(rs.next()) {
-		int no = rs.getInt(1);
-		String memo = rs.getString("memo");
-		String wdate = rs.getString(3);
-		
-		out.print("일련번호 " + no +" : "+ memo+": ("+wdate+")<br>");
-	}
-	rs.close();
+	pstmt.setString(1, memo);
+	pstmt.executeUpdate();//?들을 채운다음에 실행해야한다.
 	pstmt.close();
 	con.close();
-	out.print("DB연결 성공");
+	out.println("데이터 삭제 성공");
 %>
+
 </body>
 </html>
