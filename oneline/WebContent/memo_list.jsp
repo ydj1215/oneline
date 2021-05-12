@@ -43,8 +43,11 @@
 	out.print("DB연결 성공");
 %>
 <br><br><button onclick="location='memo_form.html'" style="font-size: 20pt">작성</button>
-<form name="deleteForm" action="memo_delete.jsp" method="post">
+
+<form name="deleteForm" action="memo_delete.jsp">
 	<p style="font-size: 20pt"> 삭제할 메모의 일련번호 입력: <input type="text" name="no" style="height: 30px"><br><br></p>
 </form>
+
 </body>
 </html>
+
