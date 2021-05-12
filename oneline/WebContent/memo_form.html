@@ -5,22 +5,92 @@
 <meta name="viewport" content="width=device-width">
 <title>한줄 메모장</title>
 </head>
+
+<style>
+body{
+	text-align: center;
+}
+
+h3{
+	font-size: 50pt;
+}
+
+.search {
+    width: 60%;
+    border-radius: 20px;
+    border: 1px solid #bbb;
+    margin: 10px 0;
+    padding: 10px 12px;
+}
+.box {
+	border:0;
+	background-color: yellow;
+    display: inline;
+    width: auto;
+    border-radius: 0;
+    margin: auto;
+    text-align: center;
+ }
+
+ .eraser{
+ 	width: 30px;
+  	height: 30px;
+ }
+
+ .enter{
+ 	border-color: #bbb;
+ 	border-radius: 20px;
+ 	width:35pt;
+ 	height:25pt
+ }
+
+ .back{
+ 	height:440pt;
+ 	background-image: url('paper.jpg');
+ 	background-repeat:no-repeat;
+ 	background-position: center;
+ }
+
+</style>
+
 <body>
-<h3>메모장</h3>
+<img src="title.jpg" onmouseover="this.src='title2.jpg'" onmouseout="this.src='title.jpg'">
 
 <form method = "post" action= "memo_write.jsp">
-<input type = "text" placeholder = "검색어 입력" name="memo"/>
-<input type="button" class="box" value="등록"/>
-<input type="button" class="box" value="중요"/>
+<input type = "text" placeholder = "검색어 입력" class="search">
+<input type="button" value="등록" class="enter">
+<input type="button" value="중요" class="enter">
+
+<div class="back">
 <p>
-(4/22 14:44) 오늘은 목요일이다.
-<input type="button" class="box" value="X">
+(4/23 18:11) 과제가 많다.
+<button type="button" class="box">
+<img src="eraser.jpg" alt="X" class="eraser">
+</button>
 </p>
+
+<p>
+(4/22 21:58) 오늘은 목요일이다.
+<button type="button" class="box">
+<img src="eraser.jpg" alt="X" class="eraser">
+</button>
+</p>
+
+<p>
+<b>(4/22 14:44) 내일 병원 가는날!</b>
+<button type="button" class="box">
+<img src="eraser.jpg" alt="X" class="eraser">
+</button>
+</p>
+
 <p>
 (4/22 14:45) 배가 고프다.
-<input type="button" class="box" value="X">
+<button type="button" class="box">
+<img src="eraser.jpg" alt="X" class="eraser">
+</button>
 </p>
-</form>
+</div>
 
+</form>
 </body>
 </html>

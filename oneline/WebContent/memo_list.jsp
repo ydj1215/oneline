@@ -43,4 +43,6 @@
 	out.print("DB연결 성공");
 %>
 </body>
+	<br><br><button onclick="location='memo_form.html'" style="font-size: 20pt">작성</button>
 </html>
+

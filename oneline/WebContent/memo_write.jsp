@@ -29,6 +29,7 @@
 	pstmt.close();
 	con.close();
 	out.println("데이터 추가 성공");
+	pageContext.forward("memo_list.jsp");
 %>
 
 </body>
