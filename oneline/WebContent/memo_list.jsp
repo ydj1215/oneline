@@ -16,7 +16,7 @@
 	#postIt {
 	 border: 3px solid black;
 	 background-color: yellow;
-	 width: 600px;
+	 width: 700px;
 	 margin: auto;
 	}
 	
@@ -79,7 +79,7 @@
 	String user = "root"; 
 	String passwd = "woehddb5555!"; 
 	Connection con = null;
-	String sql = "select * from oneline by no desc";
+	String sql = "select * from oneline order by no desc";
 	PreparedStatement pstmt = null;
 	
 	Class.forName("com.mysql.jdbc.Driver");
@@ -100,7 +100,6 @@
 	</form>
 	
 	<hr>
-	<div>
 <%
 	while(rs.next()) {
 		int no = rs.getInt(1);
@@ -114,8 +113,5 @@
 	pstmt.close();
 	con.close();
 %>
-		<p>
-		(2021/04/28, 13:54) 안녕하세요! <input type="button" value="X"></input>
-		</p>
-	</div>
+</div>
 </html>
